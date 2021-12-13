@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Personal Profile</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+            </style>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+                </style>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+                    </style>
+        <link rel="stylesheet" href="theme.css" />
+    </head>
+
+    <body>
+        <div class="profile">
+            <img src="images/profile.png" width="15%">;
+            <h1>
+                JOEL JOE BABY
+            </h1>
+            <p>
+                Web Designer, Software Developer
+            </p>
+            <br>
+            <a href="#dest" class="button">Contact Me</a>
+        </div>
+        <div class="section">
+            <div class="about">
+                <h2>About Me</h2>
+                <p>Hello, I am Joel. I am a graduate of Seneca College and programming is profession. I am from India.
+                     I moved to Canada after my high school studies. Currently I am focusing and exploring job opportunities in the programming world. </p>
+            </div>
+            <div class="info">
+                <h2>Basic information</h2>
+                <p>AGE     :    23</p>
+                <p>EMAIL   :    joeljjj111@gmail.com</p>
+                <p>LANGUAGE:    English</p>
+            </div>
+        </div>
+        <h2>Education</h2>
+        <div class="education">
+            <div class="edu1">
+                <div class="a1">
+                    <h3>Undergraduate Diploma</h3>
+                    <h4>2020-2022</h4>
+                </div>
+                <div class="a2">
+                    <h3>Undergraduate Diploma</h3>
+                    <h4>SENECA COLLEGE</h4>
+                    <br>
+                    <p>Awarded certificate for 2-year diploma program in CPP (Computer Programming)</p>
+                </div>
+            </div>
+            <div class="edu2">
+                <div class="b1">
+                    <h3>Bachelors Degree</h3>
+                    <h4>2022-2026</h4>
+                </div>
+                <div class="b2">
+                    <h3>Bachelors Degree</h3>
+                    <h4>SENECA COLLEGE</h4>
+                    <br>
+                    <p>Awarded certificate for a bachelor's degree program in Computer Science</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="dest">
+        <div class="frm">
+            <h2>Provide your Information</h2>
+        <form action="https://httpbin.org/post" method="POST" id="form_ref">
+            <label for="name">Name:</label>
+            <br>
+            <input id="name" type="text" name="name" placeholder="Name goes here" required>
+            <br>
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input id="email" type="email" name="email" placeholder="Email address goes here" required>
+            <br>
+            <br>
+            <label for="address">Address:</label>
+            <br>
+            <input id="address" type="text" name="address" placeholder="Address goes here" required>
+            <br>
+            <br>
+            <label for="pcode">Postal Code:</label>
+            <br>
+            <input id="pcode" type="text" name="pcode" placeholder="A1B 2C3" required>
+            <br>
+            <br>
+            <label for="about">Choose an option:</label>
+            <select name="about" id="about" required>
+                <option value="">None</option>
+                <option value="question">Question</option>
+                <option value="comment">Comment</option>
+                <option value="hire">Hiring</option>
+            </select>
+            <br>
+            <br>
+            <label for="pay">Hourly Pay:</label>
+            <br>
+            <input id="pay" type="number" name="pay" required disabled>
+            <br>
+            <br>
+            <label for="enquiry">Question:</label>
+            <br>
+            <textarea id="enquiry" name="enquiry" rows="4" cols="50" required>
+            </textarea>
+            <br>
+            <br>
+            <br>
+            <input type="hidden" id="mname" name="mname" value="Joel Joe Baby">
+            <input type="hidden" id="stdid" name="stdid" value="152803201">
+            <input class="btn" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+    <div id="a"></div>
+
+    <script>
+        window.onload = function () 
+        {
+            var form = document.getElementById("form_ref");
+            form.onsubmit = function ()
+             {
+                var pcode = form.pcode.value;
+                if (pcode.test(code))
+                {
+                    document.querySelector("#a").innerHTML = "Please enter a valid postal code!!!";
+                    return false;
+                }
+                return true;
+    
+            }
+        }
+    </script>
+    <script>
+        window.onload = function()
+        {
+            var form = document.getElementById("form_ref")
+            var about = form.about.value;
+            if(about=="Hiring")
+            {
+                document.getElementById("pay").disabled = false;
+            }
+        }
+    </script>
+    </body>
+</html>
+
